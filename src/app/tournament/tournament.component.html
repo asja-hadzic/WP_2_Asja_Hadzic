@@ -1,3 +1,7 @@
+<div class="news-card-container">
+
+  <h1></h1>
+</div>
 <div class="main-container">
   <div class="fixed-video">
     <iframe
@@ -9,12 +13,16 @@
       allowfullscreen>
     </iframe>
   </div>
+  <div class="news-card-container">
+
+    <h1></h1>
+  </div>
 
   <div class="videos-container">
     <iframe
       *ngFor="let video of filteredVideos"
       [src]="video"
-      title="VGC Day 1 | 2024 Pokémon World Championship"
+      title="Title"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
@@ -23,6 +31,10 @@
     </iframe>
   </div>
 
+  <div class="news-card-container">
+
+    <h1>Searching for a specific upload?</h1>
+  </div>
 
   <div class="calendar-container">
     <calendar

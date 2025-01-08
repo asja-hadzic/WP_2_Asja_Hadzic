@@ -2,14 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1b1b1b;
   color: #fdd835;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 100vh;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   box-sizing: border-box;
 }
