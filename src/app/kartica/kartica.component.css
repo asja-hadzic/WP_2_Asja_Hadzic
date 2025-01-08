@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.news-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-top:300px;
+  margin: 20px;
+  padding: 20px;
+  transition: transform 1s ease, box-shadow 1s ease;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+}
+.news-card-container {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/818/847/641/artistic-wallpaper-preview.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+   color: white;
+       text-shadow:
+             0 0 5px #ffe62d,
+             0 0 10px #ffe62d,
+             0 0 15px #ffae00,
+             0 0 20px #ffae00,
+             0 0 25px #ffae00,
+             0 0 30px #ffae00,
+             0 0 35px #ffae00,
+             0 0 40px white;
+   width: 100%;
+   max-width: max;
+   margin: 50px auto;
+   margin-top:150px;
+   margin-bottom:100px;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   position: relative;
+}
+
+.news-card h1 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+
+}
+
+.news-card p {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.news-card img {
+ width: 100%;
+   height: 200px;
+   object-fit: contain;
+   object-position: center;
+   transition: transform 0.5s ease;
+   margin-bottom: 1.5rem;
+}
+
+.news-card {
+  background-color: #fef8f0;
+   margin-top: 100px;
+}
+
+.news-card:hover {
+  background-color: #ffebcd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 600px) {
+  .news-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #121212;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #121212;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 350px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 1rem;
+}
+
+.product-card p {
+  font-size: 0.8rem;
+  color: #cccccc;
+  margin: 0 1rem 1rem;
+}
+
+.product-card button {
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffe62d;
+  color: black;
+}

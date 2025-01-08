@@ -1,0 +1,17 @@
+/* Osigurajte da telo stranice koristi fleksibilni raspored */
+html, body {
+  height: 100%; /* Postavljamo visinu na 100% kako bi cela stranica zauzela visinu ekrana */
+  margin: 0; /* Uklanjamo podrazumevane margine */
+  display: flex;
+  flex-direction: column; /* Postavljamo da se sadržaj poravna vertikalno */
+}
+
+/* Ovaj deo će omogućiti da sadržaj koristi raspoloživi prostor */
+app-root {
+  flex: 1; /* Omogućava da se ostatak stranice popuni fleksibilnim sadržajem */
+}
+
+/* Footer će sada biti gurano na dno */
+footer {
+  margin-top: auto; /* Ovo osigurava da footer uvek bude na dnu */
+}

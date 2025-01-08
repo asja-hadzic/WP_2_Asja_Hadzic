@@ -1,0 +1,71 @@
+<div class="container">
+  <section class="home-banner">
+    <video class="banner-video" autoplay muted loop>
+      <source src="https://zardocards.com/cdn/shop/videos/c/vp/62f1486551544be19cf6331324d75a79/62f1486551544be19cf6331324d75a79.HD-1080p-7.2Mbps-37758897.mp4?v=0" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="banner-content">
+      <h1>#1 Online Store for Pokemon Cards</h1>
+      <a href="/products" class="cta-button">Shop New Arrivals!</a>
+    </div>
+  </section>
+
+  <div class="product-grid">
+    <a href="/products" class="product-card">
+      <img src="https://zardocards.com/cdn/shop/files/00dd41b9-2a02-4600-99ce-67bd861be648.jpg?v=1734364243&width=700" alt="Proizvod 1">
+      <div class="card-content">
+        <h3>SLABS</h3>
+      </div>
+    </a>
+    <a href="/products" class="product-card">
+      <img src="https://zardocards.com/cdn/shop/files/hiddenfates_66761532-373b-4df1-88da-b304ba4b537a.png?v=1714668436&width=500" alt="Proizvod 2">
+      <div class="card-content">
+        <h3>BOOSTER PACKS</h3>
+      </div>
+    </a>
+    <a href="" class="product-card">
+      <img src="https://zardocards.com/cdn/shop/files/img342.jpg?v=1714667465&width=800" alt="Proizvod 1">
+      <div class="card-content">
+        <h3>ACCESSORIES</h3>
+        <p style="color: red;">COMING SOON!</p>
+      </div>
+    </a>
+    <a href="/products" class="product-card">
+      <img src="https://zardocards.com/cdn/shop/files/2e520e22-1cec-45c5-9790-f65d55257cd3.png?v=1735587875&width=300" alt="Proizvod 1">
+      <div class="card-content">
+        <h3>RAW CARDS</h3>
+      </div>
+    </a>
+  </div>
+  <div class="news-card-container">
+
+    <h1></h1>
+  </div>
+
+  <div class="testimonial-section">
+    <h1>1000+ Vouches</h1>
+    <p>More than 1000+ reviews counted globally from all our customers</p>
+  </div>
+  <div class="news-card-container">
+
+    <h1></h1>
+  </div>
+
+  <div class="new-arrivals">
+    <h2>Explore Our New Legendary Arrivals</h2>
+    <h2> </h2>
+    <h2> </h2>
+
+
+    <div class="items-grid">
+      <a href="/products/{{ item.id }}" class="item-card" *ngFor="let item of legendaryItems">
+        <img [src]="item.image" alt="{{ item.title }}" />
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          <p class="price">{{ item.price | currency: 'KM' }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

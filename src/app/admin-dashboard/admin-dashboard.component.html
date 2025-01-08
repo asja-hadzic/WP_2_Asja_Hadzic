@@ -1,0 +1,137 @@
+<body>
+<div class="container">
+  <h1>Admin Dashboard</h1>
+
+
+  <div *ngIf="errors.length > 0" class="error-messages">
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+
+
+  <form (ngSubmit)="onSubmit()">
+    <h2>{{ isEditMode ? 'Edit User' : 'Add User' }}</h2>
+
+    <div class="form-group" *ngIf="isEditMode">
+      <label for="id">ID:</label>
+      <input
+        type="number"
+        id="id"
+        [(ngModel)]="user.id"
+        name="id"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="first-name">First Name:</label>
+      <input
+        type="text"
+        id="first-name"
+        [(ngModel)]="user.first_name"
+        name="first-name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="last-name">Last Name:</label>
+      <input
+        type="text"
+        id="last-name"
+        [(ngModel)]="user.last_name"
+        name="last-name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="user.username"
+        name="username"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="user.email"
+        name="email"
+        required
+      />
+    </div>
+    <div class="form-group" *ngIf="!isEditMode">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="user.password"
+        name="password"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <select
+        id="role"
+        [(ngModel)]="user.role"
+        name="role"
+        required
+      >
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn">
+      {{ isEditMode ? 'Edit' : 'Add' }}
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="resetForm()"
+      *ngIf="isEditMode"
+    >
+      Cancel
+    </button>
+  </form>
+
+
+  <h2>User List</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <button class="btn btn-edit" (click)="editUser(user)">Edit</button>
+        <button
+          class="btn btn-delete"
+          (click)="deleteUser(user.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>

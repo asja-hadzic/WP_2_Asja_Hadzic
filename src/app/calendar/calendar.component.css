@@ -1,0 +1,110 @@
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  color: #fdd835;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+.calendar {
+  padding: 20px;
+  min-width: 384px;
+  border: 5px solid #fdd835;
+  border-radius: 10px;
+  background-color: #333;
+}
+
+.calendar-headline {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.calendar-headline-month {
+  font-weight: bold;
+}
+
+.calendar-headline-controls {
+  display: flex;
+}
+
+.calendar-headline-control {
+  cursor: pointer;
+  color: #fdd835;
+}
+
+.calendar-headline-control:hover {
+  text-decoration: underline;
+}
+
+.calendar-headline-control-today {
+  margin: 0 10px;
+}
+
+.calendar-weeks-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: rgb(200, 200, 200);
+}
+
+.calendar-weeks-grid-cell {
+  text-align: center;
+}
+
+.calendar-grid-cell-inactive {
+  color: #9e9e9e;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-top: 1px solid rgb(70, 70, 70);
+  border-left: 1px solid rgb(70, 70, 70);
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.calendar-grid-cell {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(70, 70, 70);
+  border-right: 1px solid rgb(70, 70, 70);
+  cursor: pointer;
+  color: #fdd835;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.calendar-grid-cell:hover {
+  background: #ffc107;
+  color: #1b1b1b;
+}
+
+.calendar-grid-cell-active {
+  background: #fdd835;
+  color: #1b1b1b;
+}
+
+.schedule {
+  margin-left: 10px;
+  border: 5px solid #fdd835;
+  padding: 15px;
+}
+
+.schedule-headline {
+  font-weight: 600;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fdd835;
+}

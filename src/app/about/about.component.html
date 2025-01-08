@@ -1,0 +1,61 @@
+<section class="home-banner">
+  <div class="overlay"></div>
+  <div class="banner-content">
+    <h1>Still got a question?</h1>
+    <div class="about-left">
+    <h1>Contact us!</h1>
+    <p class="response-time">Average Response Time: 1-24 hours</p>
+  </div>
+
+  <div class="about-container">
+
+  </div>
+  <div class="about-right">
+    <form (submit)="handleSubmit($event)">
+      <div class="form-row">
+        <input type="text" placeholder="Name" class="form-input" />
+        <input type="email" placeholder="E-mail" class="form-input" />
+      </div>
+      <textarea placeholder="Message" class="form-textarea"></textarea>
+      <button type="submit" class="submit-button">Send message</button>
+    </form>
+  </div>
+
+    <section class="faq-section">
+      <h2>FAQ</h2>
+
+      <div class="faq-item" [class.open]="faq1Open">
+        <div class="faq-question" (click)="toggleFaq1()">
+          <span>Where do you ship to?</span>
+          <span class="arrow">{{ faq1Open ? '▲' : '▼' }}</span>
+        </div>
+        <div class="faq-answer" *ngIf="faq1Open">
+          <p>We ship your most desired items anywhere you are in the world.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" [class.open]="faq2Open">
+        <div class="faq-question" (click)="toggleFaq2()">
+          <span>How long will my order take?</span>
+          <span class="arrow">{{ faq2Open ? '▲' : '▼' }}</span>
+        </div>
+        <div class="faq-answer" *ngIf="faq2Open">
+          <p>2-7 business days to arrive anywhere in Bosnia and Herzegovina.</p>
+          <p>Outside of BiH, deliveries can take anywhere from 7-16 days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" [class.open]="faq3Open">
+        <div class="faq-question" (click)="toggleFaq3()">
+          <span>How long am I allowed to return/refund?</span>
+          <span class="arrow">{{ faq3Open ? '▲' : '▼' }}</span>
+        </div>
+        <div class="faq-answer" *ngIf="faq3Open">
+          <p>Contact support or visit Refund Policy.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+

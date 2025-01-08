@@ -1,0 +1,14 @@
+<div class="news-card-container">
+
+    <h1>SHOP OUR EXCLUSIVE DEALS</h1>
+</div>
+
+<div class="product-card-container">
+  <div *ngFor="let product of products" class="product-card">
+    <img [src]="product.image" alt="{{ product.title }}">
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price }}</p>
+  </div>
+</div>
+
