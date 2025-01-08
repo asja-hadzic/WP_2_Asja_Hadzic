@@ -1,10 +1,11 @@
 import {
   Component,
-  InputSignal,
+  Input,
+  Output,
+  EventEmitter,
   Signal,
   WritableSignal,
   computed,
-  input,
   signal,
 } from '@angular/core';
 import { Meetings } from './meetings.interface';
@@ -19,7 +20,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class CalendarComponent {
-  meetings: InputSignal<Meetings> = input.required();
+  @Input() meetings!: Signal<Meetings>;
+  @Output() dateChange = new EventEmitter<string>();
+
   today: Signal<DateTime> = signal(DateTime.local());
   firstDayOfActiveMonth: WritableSignal<DateTime> = signal(
     this.today().startOf('month'),
@@ -32,41 +35,36 @@ export class CalendarComponent {
       this.firstDayOfActiveMonth().endOf('month').endOf('week'),
     )
       .splitBy({ day: 1 })
-      .map((d) => {
-        if (d.start === null) {
-          throw new Error('Wrong dates');
-        }
-        return d.start;
-      });
+      .map((d) => d.start!);
   });
   DATE_MED = DateTime.DATE_MED;
   activeDayMeetings: Signal<string[]> = computed(() => {
     const activeDay = this.activeDay();
-    if (activeDay === null) {
+    if (!activeDay) {
       return [];
     }
     const activeDayISO = activeDay.toISODate();
-
-    if (!activeDayISO) {
-      return [];
-    }
-
-    return this.meetings()[activeDayISO] ?? [];
+    return activeDayISO ? this.meetings()[activeDayISO] || [] : [];
   });
 
   goToPreviousMonth(): void {
-    this.firstDayOfActiveMonth.set(
-      this.firstDayOfActiveMonth().minus({ month: 1 }),
-    );
+    this.firstDayOfActiveMonth.set(this.firstDayOfActiveMonth().minus({ month: 1 }));
   }
 
   goToNextMonth(): void {
-    this.firstDayOfActiveMonth.set(
-      this.firstDayOfActiveMonth().plus({ month: 1 }),
-    );
+    this.firstDayOfActiveMonth.set(this.firstDayOfActiveMonth().plus({ month: 1 }));
   }
 
   goToToday(): void {
     this.firstDayOfActiveMonth.set(this.today().startOf('month'));
   }
+
+  selectDate(date: DateTime): void {
+    this.activeDay.set(date);
+    const isoDate = date.toISODate();
+    if (isoDate) {
+      this.dateChange.emit(isoDate);
+    }
+  }
 }
+

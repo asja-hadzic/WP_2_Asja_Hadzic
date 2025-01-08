@@ -4,10 +4,14 @@
   align-items: center;
   background-color: #1b1b1b;
   color: #fdd835;
-  padding: 0;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .calendar {
@@ -16,6 +20,9 @@
   border: 5px solid #fdd835;
   border-radius: 10px;
   background-color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .calendar-headline {
@@ -96,15 +103,40 @@
 }
 
 .schedule {
-  margin-left: 10px;
+  width: 100%;
+  max-width: 384px;
   border: 5px solid #fdd835;
   padding: 15px;
+  background-color: #333;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .schedule-headline {
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 1.5rem;
-  text-align: center;
   color: #fdd835;
+}
+
+.schedule div {
+  color: #fdd835;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 15px;
+  }
+
+  .calendar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .schedule {
+    width: 100%;
+    max-width: 100%;
+  }
 }
