@@ -29,8 +29,5 @@ import { signal } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-jedan';
-  meetings = signal<Meetings>({
-    '2025-02-20': ['https://www.youtube.com/watch?v=abc123'],
-    '2024-04-06': ['https://www.youtube.com/watch?v=xyz456'],
-  });
+
 }
