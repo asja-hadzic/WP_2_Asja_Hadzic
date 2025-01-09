@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CalendarComponent } from '../calendar/calendar.component';
-import { SafeUrlPipe } from './safe-url.pipe'; // Updated path to the SafeUrlPipe
+import { SafeUrlPipe } from './safe-url.pipe';
 import { signal } from '@angular/core';
 
 @Component({
@@ -23,11 +23,9 @@ export class HomeComponent implements OnInit {
     ],
   });
 
-  // Show all videos initially
   filteredVideos: string[] = Object.values(this.allVideos()).flat();
 
   onDateChange(event: string): void {
-    // If a date is selected, filter the videos for that date, otherwise show all videos
     const videos = this.allVideos()[event] || [];
     this.filteredVideos = event ? videos : Object.values(this.allVideos()).flat();
   }

@@ -222,7 +222,7 @@ html, body {
 
 
 .new-arrivals {
-  text-align: left;
+  text-align: center;
   background-color: #111;
   color: white;
          text-shadow:
@@ -463,9 +463,9 @@ h1, h2, p {
     0 0 40px white;
   width: 100%;
   max-width: max;
-  margin-top: 50px;
+  margin-top: 0;
   margin-bottom: 50px;
-  padding: 20px;
+  padding: 0px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -473,7 +473,7 @@ h1, h2, p {
 }
 
 .calendar-container {
-  margin: 20px 0;
+  margin: 0;
 }
 
 .calendar {
