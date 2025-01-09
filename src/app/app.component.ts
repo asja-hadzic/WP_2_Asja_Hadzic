@@ -22,15 +22,15 @@ import { signal } from '@angular/core';
     AboutComponent,
     KarticaComponent,
     CalendarComponent,
-    TournamentComponent
+    TournamentComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'web-jedan';
-    meetings = signal<Meetings>({
-       '2025-02-20': ['https://www.youtube.com/watch?v=abc123'],
-       '2024-04-06': ['https://www.youtube.com/watch?v=xyz456'],
-     });
+  meetings = signal<Meetings>({
+    '2025-02-20': ['https://www.youtube.com/watch?v=abc123'],
+    '2024-04-06': ['https://www.youtube.com/watch?v=xyz456'],
+  });
 }

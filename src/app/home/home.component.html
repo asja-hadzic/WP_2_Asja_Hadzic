@@ -6,11 +6,61 @@
     </video>
     <div class="overlay"></div>
     <div class="banner-content">
-      <h1>#1 Online Store for Pokemon Cards</h1>
-      <a href="/products" class="cta-button">Shop New Arrivals!</a>
+      <h1>#1 Online Portal for Pokemon Cards</h1>
+      <a href="/products" class="cta-button">See Our New Reviews!</a>
     </div>
   </section>
 
+  <div class="news-card-container">
+
+    <h1></h1>
+  </div>
+  <div class="main-container">
+    <div class="fixed-video">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/yJ2oq33xE_M"
+        title="Tournament Video"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="calendar-card-container">
+    </div>
+
+    <div class="videos-container">
+      <iframe
+        *ngFor="let video of filteredVideos"
+        [src]="video | safeUrl"
+        title="Title"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        class="video-item">
+      </iframe>
+    </div>
+    <div class="news-card-container">
+
+      <h1></h1>
+    </div>
+    <div class="calendar-card-container">
+      <h1>Searching for a specific upload?</h1>
+    </div>
+
+    <div class="calendar-container">
+      <calendar
+        [meetings]="allVideos"
+        (dateChange)="onDateChange($event)">
+      </calendar>
+    </div>
+  </div>
+  <div class="news-card-container">
+
+    <h1></h1>
+  </div>
   <div class="product-grid">
     <a href="/products" class="product-card">
       <img src="https://zardocards.com/cdn/shop/files/00dd41b9-2a02-4600-99ce-67bd861be648.jpg?v=1734364243&width=700" alt="Proizvod 1">
@@ -27,7 +77,7 @@
     <a href="" class="product-card">
       <img src="https://zardocards.com/cdn/shop/files/img342.jpg?v=1714667465&width=800" alt="Proizvod 1">
       <div class="card-content">
-        <h3>ACCESSORIES</h3>
+        <h3>ACCESSORIES REVIEW</h3>
         <p style="color: red;">COMING SOON!</p>
       </div>
     </a>
@@ -44,8 +94,8 @@
   </div>
 
   <div class="testimonial-section">
-    <h1>1000+ Vouches</h1>
-    <p>More than 1000+ reviews counted globally from all our customers</p>
+    <h1>1000+ Reviews</h1>
+    <p>More than 1000+ reviews counted globally over the course of 10 years.</p>
   </div>
   <div class="news-card-container">
 

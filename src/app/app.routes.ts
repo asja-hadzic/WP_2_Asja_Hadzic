@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { TournamentComponent } from './tournament/tournament.component';
+import { ResetComponent } from './reset/reset.component'; // Import the reset component
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'kartica', component: KarticaComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'reset', component: ResetComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
@@ -25,5 +27,3 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-

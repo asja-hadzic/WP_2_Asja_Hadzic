@@ -1,10 +1,10 @@
 <section class="home-banner">
   <div class="overlay"></div>
   <div class="banner-content">
-    <h1>Still got a question?</h1>
+    <h1>Want to become an official PokeDeck author?</h1>
     <div class="about-left">
     <h1>Contact us!</h1>
-    <p class="response-time">Average Response Time: 1-24 hours</p>
+    <p class="response-time">Average Response Time: 24 hours</p>
   </div>
 
   <div class="about-container">
@@ -26,32 +26,32 @@
 
       <div class="faq-item" [class.open]="faq1Open">
         <div class="faq-question" (click)="toggleFaq1()">
-          <span>Where do you ship to?</span>
+          <span>Do you sell cards or just review them?</span>
           <span class="arrow">{{ faq1Open ? '▲' : '▼' }}</span>
         </div>
         <div class="faq-answer" *ngIf="faq1Open">
-          <p>We ship your most desired items anywhere you are in the world.</p>
+          <p>Currently, we only review - but we can connect you with the best sellers!</p>
         </div>
       </div>
 
       <div class="faq-item" [class.open]="faq2Open">
         <div class="faq-question" (click)="toggleFaq2()">
-          <span>How long will my order take?</span>
+          <span>How can I upload my review?</span>
           <span class="arrow">{{ faq2Open ? '▲' : '▼' }}</span>
         </div>
         <div class="faq-answer" *ngIf="faq2Open">
-          <p>2-7 business days to arrive anywhere in Bosnia and Herzegovina.</p>
-          <p>Outside of BiH, deliveries can take anywhere from 7-16 days.</p>
+          <p>Contact us via form above or send us an email at </p>
+          <p>contact&#64;pokedeckemporium.org</p>
         </div>
       </div>
 
       <div class="faq-item" [class.open]="faq3Open">
         <div class="faq-question" (click)="toggleFaq3()">
-          <span>How long am I allowed to return/refund?</span>
+          <span>What can I write about?</span>
           <span class="arrow">{{ faq3Open ? '▲' : '▼' }}</span>
         </div>
         <div class="faq-answer" *ngIf="faq3Open">
-          <p>Contact support or visit Refund Policy.</p>
+          <p>Only Pokemon related things.</p>
         </div>
       </div>
 

@@ -4,33 +4,36 @@ import { FormsModule } from '@angular/forms';
 import { NgForOf, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-reset',
   imports: [
     FormsModule,
     NgIf,
     NgForOf
   ],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './reset.component.html',
+  styleUrls: ['./reset.component.css']
 })
-export class LoginComponent {
+export class ResetComponent {
   protected username: string = '';
-  protected password: string = '';
-  protected errors: string[] = [];
+  protected newPassword: string = '';
+  protected successMessage: string = '';
   protected errorMessage: string = '';
+  protected errors: string[] = [];
 
   public constructor(private router: Router) {}
 
-  public async onLogin() {
+  public async onResetPassword() {
     this.errors = [];
     this.errorMessage = '';
+    this.successMessage = '';
 
+    // Input validation
     if (!this.username || this.username.trim().length === 0) {
       this.errors.push("Username is required.");
     }
 
-    if (!this.password || this.password.trim().length === 0) {
-      this.errors.push("Password is required.");
+    if (!this.newPassword || this.newPassword.trim().length === 0) {
+      this.errors.push("New password is required.");
     }
 
     if (this.errors.length > 0) {
@@ -39,37 +42,29 @@ export class LoginComponent {
     }
 
     try {
-      const response = await fetch('http://localhost/pokemon/login.php', {
+      const response = await fetch('http://localhost/pokemon/reset.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           username: this.username,
-          password: this.password,
+          password: this.newPassword,
         }),
       });
 
       const data = await response.json();
 
-     if (data.success) {
-        if (data.role === 'admin') {
-          alert("Welcome, Admin!");
-          this.router.navigate(['/admin-dashboard']);
-        } else if (data.role === 'user') {
-          alert("Login successful!");
-          this.router.navigate(['/kartica']);
-        } else {
-          this.errorMessage = "Unknown user role.";
-        }
-
+      if (data.success) {
+        this.successMessage = data.message || "Password reset successfully!";
+        alert(data.message);
       } else {
-        this.errorMessage = data.message || "Invalid username or password.";
+        this.errorMessage = data.message || "Error resetting password.";
+        alert(data.message);
       }
     } catch (error: any) {
       this.errorMessage = "An error occurred. Please try again.";
-      console.error("Login error:", error.message);
-    }
-
+      console.error("Reset Password error:", error.message);
     }
   }
+}

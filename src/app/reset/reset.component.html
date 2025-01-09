@@ -1,7 +1,7 @@
 <div class="outer-container">
-  <div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+  <div class="reset-container">
+    <h2>Reset Password</h2>
+    <form (ngSubmit)="onResetPassword()" #resetForm="ngForm">
       <div class="form-group">
         <label for="username">Username:</label>
         <input
@@ -17,44 +17,43 @@
           Username is required.
         </div>
       </div>
+
       <div class="form-group">
-        <label for="password">Password:</label>
+        <label for="newPassword">New Password:</label>
         <input
           type="password"
-          id="password"
-          name="password"
-          placeholder="Enter your password"
+          id="newPassword"
+          name="newPassword"
+          placeholder="Enter your new password"
           required
-          [(ngModel)]="password"
-          #passwordInput="ngModel"
+          [(ngModel)]="newPassword"
+          #newPasswordInput="ngModel"
         />
-        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">
-          Password is required.
+        <div *ngIf="newPasswordInput.invalid && newPasswordInput.touched" class="error">
+          New password is required.
         </div>
       </div>
+
       <button
         type="submit"
-        class="login-button"
-        [disabled]="loginForm.invalid"
+        class="reset-button"
+        [disabled]="resetForm.invalid"
       >
-        Log In
+        Reset Password
       </button>
+
       <div class="form-footer">
-        <a href="/register ">You aren't registered?</a>
-        <br>
-      </div>
-    <div *ngIf="errorMessage" class="error-container">
-      <p>{{ errorMessage }}</p>
-    </div>
-      <div class="form-footer">
-        <a href="/reset ">Forgot your password?</a>
+        <a href="/login">Back to Login</a>
         <br>
       </div>
     </form>
+
     <div *ngIf="errorMessage" class="error-container">
       <p>{{ errorMessage }}</p>
     </div>
+
+    <div *ngIf="successMessage" class="success-container">
+      <p>{{ successMessage }}</p>
+    </div>
   </div>
-
-
 </div>
