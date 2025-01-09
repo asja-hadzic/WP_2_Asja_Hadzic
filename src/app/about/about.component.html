@@ -23,34 +23,42 @@
 
     <section class="faq-section">
       <h2>FAQ</h2>
-
       <div class="faq-item" [class.open]="faq1Open">
         <div class="faq-question" (click)="toggleFaq1()">
+          <span>How to view the products on your page?</span>
+          <span class="arrow">{{ faq2Open ? '▲' : '▼' }}</span>
+        </div>
+        <div class="faq-answer" *ngIf="faq1Open">
+          <p>Please log in or register to view.</p>
+        </div>
+      </div>
+      <div class="faq-item" [class.open]="faq2Open">
+        <div class="faq-question" (click)="toggleFaq2()">
           <span>Do you sell cards or just review them?</span>
           <span class="arrow">{{ faq1Open ? '▲' : '▼' }}</span>
         </div>
-        <div class="faq-answer" *ngIf="faq1Open">
-          <p>Currently, we only review - but we can connect you with the best sellers!</p>
-        </div>
-      </div>
-
-      <div class="faq-item" [class.open]="faq2Open">
-        <div class="faq-question" (click)="toggleFaq2()">
-          <span>How can I upload my review?</span>
-          <span class="arrow">{{ faq2Open ? '▲' : '▼' }}</span>
-        </div>
         <div class="faq-answer" *ngIf="faq2Open">
-          <p>Contact us via form above or send us an email at </p>
-          <p>contact&#64;pokedeckemporium.org</p>
+          <p>Currently, we only review - but we can connect you with the best sellers!</p>
         </div>
       </div>
 
       <div class="faq-item" [class.open]="faq3Open">
         <div class="faq-question" (click)="toggleFaq3()">
+          <span>How can I upload my review?</span>
+          <span class="arrow">{{ faq2Open ? '▲' : '▼' }}</span>
+        </div>
+        <div class="faq-answer" *ngIf="faq3Open">
+          <p>Contact us via form above or send us an email at </p>
+          <p>contact&#64;pokedeckemporium.org</p>
+        </div>
+      </div>
+
+      <div class="faq-item" [class.open]="faq4Open">
+        <div class="faq-question" (click)="toggleFaq4()">
           <span>What can I write about?</span>
           <span class="arrow">{{ faq3Open ? '▲' : '▼' }}</span>
         </div>
-        <div class="faq-answer" *ngIf="faq3Open">
+        <div class="faq-answer" *ngIf="faq4Open">
           <p>Only Pokemon related things.</p>
         </div>
       </div>

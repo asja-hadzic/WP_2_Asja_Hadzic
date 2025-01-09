@@ -14,9 +14,11 @@ export class AboutComponent {
     event.preventDefault();
     console.log('Form submitted!');
   }
-  faq1Open = false;
+    faq1Open = false;
     faq2Open = false;
     faq3Open = false;
+    faq4Open = false;
+
 
     toggleFaq1() {
       this.faq1Open = !this.faq1Open;
@@ -29,5 +31,9 @@ export class AboutComponent {
     toggleFaq3() {
       this.faq3Open = !this.faq3Open;
     }
+
+    toggleFaq4() {
+        this.faq4Open = !this.faq4Open;
+      }
 }
 
