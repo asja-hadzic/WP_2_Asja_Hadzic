@@ -14,10 +14,6 @@ import { Router } from '@angular/router';
 })
 export class KarticaComponent implements OnInit {
   products: any[] = [];
-  cart: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
-  cartItems$: Observable<any[]> = this.cart.asObservable();
-  isCartVisible: boolean = false;
-
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
