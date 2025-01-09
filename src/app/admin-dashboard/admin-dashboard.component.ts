@@ -102,7 +102,7 @@ export class AdminDashboardComponent implements OnInit {
 
 
   protected editUser(user: any): void {
-    this.user = { ...user }; // Copy user data
+    this.user = { ...user };
     this.isEditMode = true;
   }
 
@@ -137,8 +137,8 @@ export class AdminDashboardComponent implements OnInit {
   protected resetForm(): void {
     this.user = {
       id: null,
-      first_name: '',  // Updated to match PHP
-      last_name: '',   // Updated to match PHP
+      first_name: '',
+      last_name: '',
       username: '',
       email: '',
       password: '',
